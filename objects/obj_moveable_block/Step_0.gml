@@ -1,11 +1,4 @@
 var mouse_on_me = position_meeting(mouse_x, mouse_y, self)
-var maus_on_me = false
-if instance_exists(obj_maus){
-	maus_on_me = (obj_maus.bbox_left > bbox_left && obj_maus.bbox_left < bbox_right ||
-	obj_maus.bbox_right > bbox_left && obj_maus.bbox_right < bbox_right) &&
-	(obj_maus.bbox_bottom > bbox_top - 2 && obj_maus.bbox_bottom < bbox_top + 2)
-}
-show_debug_message("maus on me?:", string(maus_on_me))
 var clicked = mouse_check_button_pressed(1)
 var held = mouse_check_button(1)
 
