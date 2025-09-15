@@ -43,6 +43,7 @@
     {"id":{"name":"obj_maus","path":"objects/obj_maus/obj_maus.yy",},},
     {"id":{"name":"obj_moveable_block","path":"objects/obj_moveable_block/obj_moveable_block.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"get_colliding_bboxes","path":"scripts/get_colliding_bboxes/get_colliding_bboxes.yy",},},
     {"id":{"name":"spr_bg","path":"sprites/spr_bg/spr_bg.yy",},},
     {"id":{"name":"spr_block","path":"sprites/spr_block/spr_block.yy",},},
     {"id":{"name":"spr_boundary_9slice","path":"sprites/spr_boundary_9slice/spr_boundary_9slice.yy",},},
