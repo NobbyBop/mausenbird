@@ -1,4 +1,10 @@
-// Handle player's desired movement.
+// First, check if we're getting crushed.
+if (place_meeting(x, y+1, obj_block) &&  place_meeting(x, y-1, obj_block)) ||
+(place_meeting(x-1, y, obj_block) &&  place_meeting(x+1, y, obj_block)) {
+	show_debug_message("crushed")
+	room_restart()
+}
+
 var on_ground = place_meeting(x, y+1, obj_block)
 var on_ceiling = place_meeting(x, y-1, obj_block)
 

@@ -1,16 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"obj_moveable_block",
+  "%Name":"obj_moveable_block_3",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_moveable_block",
+  "name":"obj_moveable_block_3",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Moveable Items",
+    "path":"folders/Objects/Moveable Items.yy",
   },
   "parentObjectId":{
     "name":"obj_block",
@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_moveable_block",
-    "path":"sprites/spr_moveable_block/spr_moveable_block.yy",
+    "name":"spr_moveable_block_3",
+    "path":"sprites/spr_moveable_block_3/spr_moveable_block_3.yy",
   },
   "spriteMaskId":null,
   "visible":true,
