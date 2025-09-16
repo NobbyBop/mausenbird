@@ -13,17 +13,9 @@ if !held {
 
 if moving {
 
-	var goal_x = mouse_x - offset_x;
-	var goal_y = mouse_y - offset_y;
-
-	if (point_distance(x, y, goal_x, goal_y) > maxspd) {
-	    var dir = point_direction(x, y, goal_x, goal_y);
-	    goal_x = x + lengthdir_x(maxspd, dir);
-	    goal_y = y + lengthdir_y(maxspd, dir);
-	} 
+	var goal_x = clamp(mouse_x - offset_x, left_bound, right_bound-sprite_width)
+	var goal_y = clamp(mouse_y - offset_y, top_bound, bottom_bound-sprite_width)
 	
-	goal_x = clamp(round(goal_x), left_bound, right_bound-sprite_width)
-	goal_y = clamp(round(goal_y), top_bound, bottom_bound-sprite_width)
 	
 	while place_meeting(goal_x, y, obj_block) && goal_x != prev_x{
 		goal_x -= sign(goal_x-prev_x)

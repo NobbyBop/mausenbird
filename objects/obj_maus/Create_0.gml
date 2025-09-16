@@ -1,5 +1,5 @@
 // player movement constants
-hspd = 5
+hspd = 3
 vspd = -5
 grav = 0.2
 terminal_v = 10

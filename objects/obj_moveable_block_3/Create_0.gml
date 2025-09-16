@@ -3,11 +3,6 @@ maxspd = 1.5
 offset_x = 0
 offset_y = 0
 
-// Mode is 0 when you have yet to select the block,
-// 1 when you have yet to select the destination
-// 2 when it is in motion and cannot be interrupted
-mode = 0
-
 prev_x = x
 prev_y = y
 

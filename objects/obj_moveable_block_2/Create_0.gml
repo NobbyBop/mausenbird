@@ -3,6 +3,10 @@ maxspd = 1.5
 offset_x = 0
 offset_y = 0
 
+grav = .1
+gravspd = 0
+maxgrav = 5
+
 prev_x = x
 prev_y = y
 

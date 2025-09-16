@@ -13,6 +13,8 @@ if !held {
 
 if moving {
 
+	gravspd = 0
+	
 	var goal_x = clamp(mouse_x - offset_x, left_bound, right_bound-sprite_width)
 	var goal_y = clamp(mouse_y - offset_y, top_bound, bottom_bound-sprite_width)
 	
@@ -28,11 +30,28 @@ if moving {
 	prev_x  = x
 	prev_y = y
 	
-	x = goal_x
-	y = goal_y
+	x = round(goal_x)
+	y = round(goal_y)
 	
-	// Player movement code!
-	if place_meeting(prev_x, prev_y-1, obj_maus){
+
+} else {
+	gravspd = clamp(grav + gravspd, 0, maxgrav)
+	var goal_y = clamp(y + gravspd, top_bound, bottom_bound-sprite_width)
+	while place_meeting(x, goal_y, obj_block){
+		gravspd = 0
+		goal_y--
+	}
+	if goal_y == bottom_bound-sprite_width {
+		gravspd = 0
+	}
+	
+	prev_x = x
+	prev_y = y
+	x = round(x + (x - prev_x))
+	y = round(goal_y)
+}
+
+if place_meeting(prev_x, prev_y-1, obj_maus){
 		var new_maus_x = obj_maus.x + (x-prev_x)
 		var new_maus_y = obj_maus.y + (y-prev_y)
 		var max_iterations = 16 //half of one block size
@@ -65,5 +84,3 @@ if moving {
 	while place_meeting(x, y, obj_maus){
 		obj_maus.x += sign(x - prev_x)
 	}
-
-}

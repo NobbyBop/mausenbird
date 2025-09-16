@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_moveable_block_3",
-    "path":"sprites/spr_moveable_block_3/spr_moveable_block_3.yy",
+    "name":"spr_moveable_block_2",
+    "path":"sprites/spr_moveable_block_2/spr_moveable_block_2.yy",
   },
   "spriteMaskId":null,
   "visible":true,
