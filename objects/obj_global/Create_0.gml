@@ -1,1 +1,4 @@
-window_set_size(3*320, 3*320)
+
+global.SCREEN_HEIGHT = 320
+global.SCREEN_WIDTH = 320
+global.SCREEN_SCALE = 4

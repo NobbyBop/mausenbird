@@ -1,13 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_boundary",
-  "eventList":[],
+  "%Name":"obj_deathblock",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_maus","path":"objects/obj_maus/obj_maus.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_boundary",
+  "name":"obj_deathblock",
   "overriddenProperties":[],
   "parent":{
-    "name":"Boundaries",
-    "path":"folders/Objects/Boundaries.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -28,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_boundary_9slice",
-    "path":"sprites/spr_boundary_9slice/spr_boundary_9slice.yy",
+    "name":"spr_deathblock",
+    "path":"sprites/spr_deathblock/spr_deathblock.yy",
   },
   "spriteMaskId":null,
   "visible":true,

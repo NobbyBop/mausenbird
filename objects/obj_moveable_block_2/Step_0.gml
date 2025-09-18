@@ -4,8 +4,7 @@ var held = mouse_check_button(1)
 
 if clicked && mouse_on_me {
 	moving = true
-	offset_x = mouse_x - x
-	offset_y = mouse_y - y
+
 }
 if !held {
 	moving = false
@@ -13,8 +12,20 @@ if !held {
 
 if moving {
 
-	var goal_x = clamp(mouse_x - offset_x, left_bound, right_bound-sprite_width)
-	var goal_y = clamp(mouse_y - offset_y, top_bound, bottom_bound-sprite_width)
+	gravspd = 0
+    
+    var goal_x = mouse_x - sprite_width/2;
+	var goal_y = mouse_y - sprite_height/2;
+    
+    
+	if (point_distance(x, y, goal_x, goal_y) > MAXSPD) {
+	    var dir = point_direction(x, y, goal_x, goal_y);
+	    goal_x = x + lengthdir_x(MAXSPD, dir);
+	    goal_y = y + lengthdir_y(MAXSPD, dir);
+	} 
+	
+	goal_x = clamp(goal_x, LEFT_BOUND, RIGHT_BOUND-sprite_width)
+	goal_y = clamp(goal_y, TOP_BOUND, BOTTOM_BOUND-sprite_width)
 	
 	
 	while place_meeting(goal_x, y, obj_block) && goal_x != prev_x{
@@ -28,11 +39,28 @@ if moving {
 	prev_x  = x
 	prev_y = y
 	
-	x = goal_x
-	y = goal_y
+	x = round(goal_x)
+	y = round(goal_y)
 	
-	// Player movement code!
-	if place_meeting(prev_x, prev_y-1, obj_maus){
+
+} else {
+	gravspd = clamp(GRAV + gravspd, 0, MAXGRAV)
+	var goal_y = clamp(y + gravspd, TOP_BOUND, BOTTOM_BOUND-sprite_width)
+	while place_meeting(x, goal_y, obj_block){
+		gravspd = 0
+		goal_y--
+	}
+	if goal_y == BOTTOM_BOUND-sprite_width {
+		gravspd = 0
+	}
+	
+	prev_x = x
+	prev_y = y
+	x = round(x + (x - prev_x))
+	y = round(goal_y)
+}
+
+if place_meeting(prev_x, prev_y-1, obj_maus){
 		var new_maus_x = obj_maus.x + (x-prev_x)
 		var new_maus_y = obj_maus.y + (y-prev_y)
 		var max_iterations = 16 //half of one block size
@@ -65,5 +93,3 @@ if moving {
 	while place_meeting(x, y, obj_maus){
 		obj_maus.x += sign(x - prev_x)
 	}
-
-}

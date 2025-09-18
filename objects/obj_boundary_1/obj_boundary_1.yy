@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_boundary",
+  "%Name":"obj_boundary_1",
   "eventList":[],
   "managed":true,
-  "name":"obj_boundary",
+  "name":"obj_boundary_1",
   "overriddenProperties":[],
   "parent":{
     "name":"Boundaries",
@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_boundary_9slice",
-    "path":"sprites/spr_boundary_9slice/spr_boundary_9slice.yy",
+    "name":"spr_boundary_1",
+    "path":"sprites/spr_boundary_1/spr_boundary_1.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -1,4 +1,10 @@
-// Handle player's desired movement.
+// First, check if we're getting crushed.
+if (place_meeting(x, y+1, obj_block) &&  place_meeting(x, y-1, obj_block)) ||
+(place_meeting(x-1, y, obj_block) &&  place_meeting(x+1, y, obj_block)) {
+	show_debug_message("crushed")
+	room_restart()
+}
+
 var on_ground = place_meeting(x, y+1, obj_block)
 var on_ceiling = place_meeting(x, y-1, obj_block)
 
@@ -9,22 +15,22 @@ var jump = jump_buffer > 0 && on_ground_buffer > 0
 if jump {
     jump_buffer = 0
     on_ground_buffer = 0
-    cur_vspd = vspd
+    cur_vspd = VSPD
 } else if on_ceiling {
     if cur_vspd <= 0 {
-		cur_vspd = grav
+		cur_vspd = GRAV
 	} else {
-		cur_vspd += grav
+		cur_vspd += GRAV
 	}
 } else if on_ground {
 	cur_vspd = 0
 } else {
-    cur_vspd += grav
-	cur_vspd = clamp(cur_vspd, vspd, terminal_v)
+    cur_vspd += GRAV
+	cur_vspd = clamp(cur_vspd, VSPD, TERMINAL_V)
 }
 
 var horiz_dir = keyboard_check(ord("D")) - keyboard_check(ord("A"))
-var goal_x = x + horiz_dir * hspd
+var goal_x = x + horiz_dir * HSPD
 var goal_y = y + cur_vspd
 
 if horiz_dir != 0 {
