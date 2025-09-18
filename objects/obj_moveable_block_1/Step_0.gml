@@ -4,8 +4,6 @@ var held = mouse_check_button(1)
 
 if clicked && mouse_on_me {
 	moving = true
-	offset_x = mouse_x - x
-	offset_y = mouse_y - y
 }
 if !held {
 	moving = false
@@ -13,17 +11,17 @@ if !held {
 
 if moving {
 
-	var goal_x = mouse_x - offset_x;
-	var goal_y = mouse_y - offset_y;
-
-	if (point_distance(x, y, goal_x, goal_y) > maxspd) {
+	var goal_x = mouse_x - sprite_width/2;
+	var goal_y = mouse_y - sprite_height/2;
+    
+	if (point_distance(x, y, goal_x, goal_y) > MAXSPD) {
 	    var dir = point_direction(x, y, goal_x, goal_y);
-	    goal_x = x + lengthdir_x(maxspd, dir);
-	    goal_y = y + lengthdir_y(maxspd, dir);
+	    goal_x = x + lengthdir_x(MAXSPD, dir);
+	    goal_y = y + lengthdir_y(MAXSPD, dir);
 	} 
 	
-	goal_x = clamp(round(goal_x), left_bound, right_bound-sprite_width)
-	goal_y = clamp(round(goal_y), top_bound, bottom_bound-sprite_width)
+	goal_x = clamp(round(goal_x), LEFT_BOUND, RIGHT_BOUND-sprite_width)
+	goal_y = clamp(round(goal_y), TOP_BOUND, BOTTOM_BOUND-sprite_width)
 	
 	while place_meeting(goal_x, y, obj_block) && goal_x != prev_x{
 		goal_x -= sign(goal_x-prev_x)

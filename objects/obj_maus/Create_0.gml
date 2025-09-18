@@ -1,8 +1,8 @@
 // player movement constants
-hspd = 3
-vspd = -5
-grav = 0.2
-terminal_v = 10
+HSPD = 3
+VSPD = -5
+GRAV = 0.2
+TERMINAL_V = 10
 
 // current vertical speed - incremental
 cur_vspd = 0

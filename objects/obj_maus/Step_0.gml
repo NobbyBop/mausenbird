@@ -15,22 +15,22 @@ var jump = jump_buffer > 0 && on_ground_buffer > 0
 if jump {
     jump_buffer = 0
     on_ground_buffer = 0
-    cur_vspd = vspd
+    cur_vspd = VSPD
 } else if on_ceiling {
     if cur_vspd <= 0 {
-		cur_vspd = grav
+		cur_vspd = GRAV
 	} else {
-		cur_vspd += grav
+		cur_vspd += GRAV
 	}
 } else if on_ground {
 	cur_vspd = 0
 } else {
-    cur_vspd += grav
-	cur_vspd = clamp(cur_vspd, vspd, terminal_v)
+    cur_vspd += GRAV
+	cur_vspd = clamp(cur_vspd, VSPD, TERMINAL_V)
 }
 
 var horiz_dir = keyboard_check(ord("D")) - keyboard_check(ord("A"))
-var goal_x = x + horiz_dir * hspd
+var goal_x = x + horiz_dir * HSPD
 var goal_y = y + cur_vspd
 
 if horiz_dir != 0 {

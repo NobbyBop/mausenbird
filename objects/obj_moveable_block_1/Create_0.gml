@@ -1,21 +1,20 @@
+
+MAXSPD = 1.5
 moving = false
-maxspd = 1.5
-offset_x = 0
-offset_y = 0
 
 prev_x = x
 prev_y = y
 
-left_bound = 0
-right_bound = room_width
-top_bound = 0
-bottom_bound = room_height
+LEFT_BOUND = 0
+RIGHT_BOUND = room_width
+TOP_BOUND = 0
+BOTTOM_BOUND = room_height
 
-if place_meeting(x, y, obj_boundary){
-	var boundary = instance_place(x, y, obj_boundary)
+if place_meeting(x, y, obj_boundary_1){
+	var boundary = instance_place(x, y, obj_boundary_1)
 	
-	left_bound = boundary.bbox_left
-	right_bound = boundary.bbox_right
-	top_bound = boundary.bbox_top
-	bottom_bound = boundary.bbox_bottom
+	LEFT_BOUND = boundary.bbox_left
+	RIGHT_BOUND = boundary.bbox_right
+	TOP_BOUND = boundary.bbox_top
+	BOTTOM_BOUND = boundary.bbox_bottom
 }

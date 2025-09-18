@@ -13,8 +13,8 @@ if !held {
 
 if moving {
 
-	var goal_x = clamp(mouse_x - offset_x, left_bound, right_bound-sprite_width)
-	var goal_y = clamp(mouse_y - offset_y, top_bound, bottom_bound-sprite_width)
+	var goal_x = clamp(mouse_x - offset_x, LEFT_BOUND, RIGHT_BOUND-sprite_width)
+	var goal_y = clamp(mouse_y - offset_y, TOP_BOUND, BOTTOM_BOUND-sprite_width)
 	
 	
 	while place_meeting(goal_x, y, obj_block) && goal_x != prev_x{
